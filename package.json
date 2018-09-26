@@ -1,0 +1,14 @@
+{
+  "name": "ventilation-guide",
+  "version": "0.0.1",
+  "description": "calculates a ventilation advice based on calculations using the inside and ouside temp plus humidity",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Andreas Parusel",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^23.6.0"
+  }
+}
