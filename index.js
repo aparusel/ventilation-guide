@@ -33,6 +33,19 @@ function getRecommendation(tempIn, humIn, tempOut, humOut) {
     }
 }
 
+function calcSaturationVapor(temp) {
+    const {c1, c2} = getCoefficients(temp);
+    return 6.1078 * Math.exp(c1 * temp / (c2 + temp)); 
+}
+
+function calcWaterAtFullSaturation(temp) {
+    return calcSaturationVapor(temp)/(461.52*(temp+273.15))*100000;
+}
+
+function calcIndoorTargetHumidity(tempIn, tempOut, humOut) {
+    return Math.round(100 * calcWaterAtFullSaturation(tempOut) * humOut/100 / calcWaterAtFullSaturation(tempIn)); 
+}
+
 exports.getCoefficients = getCoefficients;
 exports.calcDewPoint = calcDewPoint;
 exports.getRecommendation = getRecommendation;
