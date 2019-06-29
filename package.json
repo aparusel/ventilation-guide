@@ -9,6 +9,6 @@
   "author": "Andreas Parusel",
   "license": "ISC",
   "devDependencies": {
-    "jest": "^23.6.0"
+    "jest": "^24.8.0"
   }
 }
