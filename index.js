@@ -22,15 +22,15 @@ function getRecommendation(tempIn, humIn, tempOut, humOut) {
 
     const targetHum = calcIndoorTargetHumidity(tempIn, tempOut, humOut);
     if (diff < -5) {
-        return `Auf keinen Fall lüften! Die Feuchtigkeit würde sich um ${targetHum - humIn} Prozent erhöhen.`;
+        return `Auf keinen Fall lüften! Die Luftfeuchtigkeit würde sich von ${humIn}% auf ${targetHum}% verschlechtern.`;
     } else if (diff < -1) {
-        return `Eher nicht lüften. Die Feuchtigkeit würde sich um ${targetHum - humIn} Prozent erhöhen.`;
+        return `Eher nicht lüften. Die Luftfeuchtigkeit würde sich von ${humIn}% auf ${targetHum}% verschlechtern.`;
     } else if (diff < 1) {
-        return `Es kann gelüftet werden. die Feuchtigkeit wird sich kaum verändern.`;
+        return `Es kann gelüftet werden. die Luftfeuchtigkeit wird sich kaum verändern.`;
     } else if (diff < 5) {
-        return `Ja. Guter Lüftungseffekt, die Feuchtigkeit wird sich um ${humIn - targetHum} Prozent verringern`;
+        return `Ja. Guter Lüftungseffekt, die Luftfeuchtigkeit wird sich von ${humIn}% auf ${targetHum}% verbessern.`;
     } else {
-        return `Unbedingt! Sehr guter Lüftungseffekt, die Feuchtigkeit wird sich um ${humIn - targetHum} Prozent verringern`;
+        return `Unbedingt! Sehr guter Lüftungseffekt, die Luftfeuchtigkeit wird sich von ${humIn}% auf ${targetHum}% verbessern.`;
     }
 }
 
