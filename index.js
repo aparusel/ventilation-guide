@@ -26,11 +26,11 @@ function getRecommendation(tempIn, humIn, tempOut, humOut) {
     } else if (diff < -1) {
         return `Eher nicht lüften. Die Luftfeuchtigkeit würde sich von ${humIn}% auf ${targetHum}% verschlechtern.`;
     } else if (diff < 1) {
-        return `Es kann gelüftet werden. die Luftfeuchtigkeit wird sich kaum verändern.`;
+        return `Es kann gelüftet werden. die Luftfeuchtigkeit würde sich kaum verändern.`;
     } else if (diff < 5) {
-        return `Ja. Guter Lüftungseffekt, die Luftfeuchtigkeit wird sich von ${humIn}% auf ${targetHum}% verbessern.`;
+        return `Ja. Guter Lüftungseffekt, die Luftfeuchtigkeit würde sich von ${humIn}% auf ${targetHum}% verbessern.`;
     } else {
-        return `Unbedingt! Sehr guter Lüftungseffekt, die Luftfeuchtigkeit wird sich von ${humIn}% auf ${targetHum}% verbessern.`;
+        return `Unbedingt! Sehr guter Lüftungseffekt, die Luftfeuchtigkeit würde sich von ${humIn}% auf ${targetHum}% verbessern.`;
     }
 }
 
