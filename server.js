@@ -9,10 +9,10 @@ app.get('/', (req, res) => {
 
 
 app.get('/ventilation-guide', (req, res) => {
-	let tempIn = Number(req.query.tempIn);
-    let humIn = Number(req.query.humIn);
-    let tempOut = Number(req.query.tempOut);
-	let humOut = Number(req.query.humOut);
+	let tempIn = Number(req.query.tempIn.replace(",","."));
+    let humIn = Number(req.query.humIn.replace(",","."));
+    let tempOut = Number(req.query.tempOut.replace(",","."));
+	let humOut = Number(req.query.humOut.replace(",","."));
 
 	res.send(getRecommendation(tempIn, humIn, tempOut, humOut));
 });
